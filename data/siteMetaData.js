@@ -8,8 +8,6 @@ const siteMetaData = {
 
   email: 'zhangyubo56@163.com',
   github: 'https://github.com/JasonZhang10',
-
-  headerTitle: 'YUBOOM',
 };
 
 module.exports = siteMetaData;
