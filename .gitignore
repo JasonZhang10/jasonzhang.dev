@@ -1,0 +1,121 @@
+# IDE配置文件
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 依赖目录
+/node_modules/
+.pnp
+.pnp.js
+
+# Next.js 构建目录
+/.next/
+/out/
+.next/cache
+
+# 构建输出
+/dist/
+/build
+/build.zip
+
+# 覆盖率报告
+/coverage/
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 锁文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 环境配置文件
+.env*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 缓存文件
+.eslintcache
+.stylelintcache
+.cache/
+.parcel-cache/
+
+# 操作系统生成的无用文件
+.DS_Store
+*.pem
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+
+# Mac系统文件
+.AppleDouble
+.LSOverride
+
+# Windows系统文件
+ehthumbs.db
+ehthumbs_vista.db
+
+# Linux系统文件
+*~
+
+# 编辑器临时文件
+*.swp
+*.swo
+*.lock
+*.bak
+
+# npm安装的全局包符号链接
+.npm/
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Jest缓存和测试结果
+/jest.cache
+/jest-html-reporters-*.json
+
+# Storybook输出
+/out/
+storybook-static/
+
+# 错误快照
+error_snapshots/
+
+# GitHub工作流生成的临时文件
+.github/workflows/node_modules/
+
+# 本地依赖包
+*.tgz
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# vercel
+.vercel
