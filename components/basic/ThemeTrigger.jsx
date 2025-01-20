@@ -8,29 +8,18 @@ import { Moon, Sun } from 'lucide-react';
 const THEME_TYPE = {
   DARK: 'dark',
   LIGHT: 'light',
-  SYSTEM: 'system',
 };
 
 export default function ThemeTrigger({ className }) {
-  const { theme = 'system', setTheme } = useTheme();
-  console.log('theme', theme);
+  const { theme = 'light', setTheme } = useTheme();
+
   return (
-    <div className={cn('w-8 h-8 rounded', className)}>
+    <div className={cn('w-6 h-6', className)}>
       {theme === THEME_TYPE.DARK && (
-        <Sun
-          onClick={() => {
-            setTheme(THEME_TYPE.LIGHT);
-            console.log('theme111', theme);
-          }}
-        />
+        <Sun onClick={() => setTheme(THEME_TYPE.LIGHT)} />
       )}
-      {(theme === THEME_TYPE.LIGHT || theme === THEME_TYPE.SYSTEM) && (
-        <Moon
-          onClick={() => {
-            setTheme(THEME_TYPE.DARK);
-            console.log('theme222', theme);
-          }}
-        />
+      {theme === THEME_TYPE.LIGHT && (
+        <Moon onClick={() => setTheme(THEME_TYPE.DARK)} />
       )}
     </div>
   );
