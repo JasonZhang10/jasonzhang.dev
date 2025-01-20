@@ -33,7 +33,7 @@ export default function Header() {
   const menu = ['home', 'blog', 'project', 'about'];
 
   return (
-    <header className="w-full h-20 flex items-center justify-around px-12 md:px-6">
+    <header className="w-full h-24 flex items-center justify-between mb-6">
       <div className="flex items-center gap-1">
         <Atom className="w-5 h-5" />
         <div className="text-xl">Jason Zhang</div>

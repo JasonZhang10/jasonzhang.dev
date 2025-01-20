@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Github, Code } from 'lucide-react';
+import { Github, Code, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -10,6 +10,7 @@ export default function Footer() {
       <div className="flex items-center justify-center gap-6">
         <Github />
         <Code />
+        <Mail />
       </div>
       <div className="text-sm">Copyright © 2025 Jason Zhang</div>
     </footer>

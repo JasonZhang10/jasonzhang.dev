@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import ThemeProvider from '@/components/basic/ThemeProvider';
+import LayoutStructure from '@/app/LayoutStructure';
 import './globals.css';
 
 const siteMetaData = require('@/data/siteMetaData.js');
@@ -53,7 +54,9 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <ThemeProvider attribute="class">
+          <LayoutStructure>{children}</LayoutStructure>
+        </ThemeProvider>
       </body>
     </html>
   );
