@@ -7,7 +7,7 @@ export default function Home() {
     <div className="w-full h-full">
       <div className="text-4xl mb-8">😊 Hello, World! 🌍</div>
       <div className="flex flex-col gap-6 mb-8">
-        <p>I'm Jason Zhang - a Software Engineer in China.</p>
+        <p>I&apos;m Jason Zhang - a Software Engineer in China.</p>
         <p>I work mostly with JS/TS technology.</p>
         <p>
           From design to code, I built this site myself for recording and
