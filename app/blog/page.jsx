@@ -5,6 +5,11 @@ import { getMDXComponent } from 'next-contentlayer2/hooks';
 import Link from 'next/link';
 
 const PostCard = ({ post }) => {
+  if (!post?.body?.code) {
+    console.error('post.body.code is missing', post);
+    return <div></div>;
+  }
+
   const Content = getMDXComponent(post.body.code);
   console.log('post', post);
   return (
@@ -21,9 +26,7 @@ const PostCard = ({ post }) => {
       <time dateTime={post.date} className="block mb-2 text-xs text-gray-600">
         {post.date}
       </time>
-      <div className="text-sm">
-        <Content />
-      </div>
+      <div className="text-sm">{Content && <Content />}</div>
     </div>
   );
 };
