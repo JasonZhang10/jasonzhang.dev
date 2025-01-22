@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useMemo } from 'react';
-import { allPosts } from '.contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 
 const PostLayout = ({ params }) => {
@@ -12,7 +12,7 @@ const PostLayout = ({ params }) => {
     [id, allPosts]
   );
 
-  const Content = useMemo(() => {
+  const MDXContent = useMemo(() => {
     if (post?.body.code) return getMDXComponent(post?.body.code);
     return null;
   }, [post]);
@@ -36,7 +36,7 @@ const PostLayout = ({ params }) => {
           <h1>{post.title}</h1>
         </div>
       )}
-      {Content && <Content />}
+      {MDXContent && <MDXContent />}
     </article>
   );
 };
