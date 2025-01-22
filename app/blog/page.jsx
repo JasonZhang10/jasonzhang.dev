@@ -4,7 +4,7 @@ import { allPosts } from '.contentlayer/generated';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 import Link from 'next/link';
 
-function PostCard(post) {
+const PostCard = (post) => {
   const Content = getMDXComponent(post.body.code);
   console.log('post', post);
   return (
@@ -26,7 +26,7 @@ function PostCard(post) {
       </div>
     </div>
   );
-}
+};
 
 const Blog = () => {
   return (
