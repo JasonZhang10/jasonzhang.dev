@@ -4,12 +4,16 @@ import React from 'react';
 import { cn } from '@/lib/utils/tailwindMerge';
 import dynamic from 'next/dynamic';
 import { Atom } from 'lucide-react';
+import useHomeStore from '@/lib/store/HomeStore';
+import Link from 'next/link';
 
 const ThemeTrigger = dynamic(() => import('@/components/basic/ThemeTrigger'), {
   ssr: false,
 });
 
 const HeaderMenu = ({ menu, className }) => {
+  const { currentTab, setCurrentTab } = useHomeStore((state) => state);
+
   return (
     <div
       className={cn(
@@ -18,26 +22,40 @@ const HeaderMenu = ({ menu, className }) => {
       )}
     >
       {menu.map((item, index) => (
-        <div
+        <Link
           key={index}
-          className="rounded-xl hover:bg-gray-100 dark:hover:bg-opacity-10 sm:p-4 cursor-pointer"
+          href={item.href}
+          className={cn(
+            'rounded-xl hover:bg-gray-100 dark:hover:bg-opacity-10 sm:p-4 cursor-pointer',
+            currentTab === index && 'text-amber-300'
+          )}
+          onClick={() => setCurrentTab(index)}
         >
-          {item.toUpperCase()}
-        </div>
+          {item.title.toUpperCase()}
+        </Link>
       ))}
     </div>
   );
 };
 
 export default function Header() {
-  const menu = ['home', 'blog', 'project', 'about'];
+  const menu = [
+    { title: 'blog', href: '/blog' },
+    { title: 'project', href: '/project' },
+    { title: 'about', href: '/about' },
+  ];
+  const { setCurrentTab } = useHomeStore((state) => state);
 
   return (
     <header className="w-full h-24 flex items-center justify-between mb-6">
-      <div className="flex items-center gap-1">
+      <Link
+        href={'/'}
+        className="flex items-center gap-1"
+        onClick={() => setCurrentTab(-1)}
+      >
         <Atom className="w-5 h-5" />
         <div className="text-xl">Jason Zhang</div>
-      </div>
+      </Link>
       <div className="flex items-center gap-4">
         <HeaderMenu menu={menu} />
         <ThemeTrigger />
