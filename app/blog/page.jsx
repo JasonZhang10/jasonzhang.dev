@@ -1,40 +1,18 @@
-'use client';
+import { Container } from '@/components/layout/Container/Container';
+import { Paragraph } from '@/components/ui/Paragraph';
+import { getAllBlogs } from '@/lib/utils/getAllBlogs';
+import { Blogs } from '@/components/ui/Blogs';
 
-import Link from 'next/link';
-import { format } from 'date-fns';
-
-const PostCard = ({ post }) => {
-  if (!post?.body?.code) {
-    console.error('post.body.code is missing', post);
-    return <div></div>;
-  }
+export default async function Blog() {
+  const blogs = await getAllBlogs();
 
   return (
-    <div className="mb-8">
-      <h2 className="text-xl">
-        <Link
-          href={post.url}
-          className="text-blue-700 hover:text-blue-900"
-          legacyBehavior
-        >
-          {post.title}
-        </Link>
-      </h2>
-      <time dateTime={post.date} className="block mb-2 text-xs text-gray-600">
-        {format(new Date(post.date), 'yyyy-MM-dd')}
-      </time>
-    </div>
+    <Container>
+      <span className="text-4xl">📝</span>
+      <Paragraph className="pb-10">
+        Ever since I was a kid, I&apos;ve been fascinated by technology.
+      </Paragraph>
+      <Blogs blogs={blogs} />
+    </Container>
   );
-};
-
-const Blog = () => {
-  return (
-    <div className="w-full h-full">
-      <div className="max-w-xl py-8 mx-auto">
-        <h1 className="mb-8 text-3xl font-bold text-center">Next.js Example</h1>
-      </div>
-    </div>
-  );
-};
-
-export default Blog;
+}

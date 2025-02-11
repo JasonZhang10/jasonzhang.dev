@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { format } from 'date-fns';
 import 'css/prism.css';
-import 'katex/dist/katex.css';
 
 const PostLayout = ({ params }) => {
   const [id, setId] = useState(null);
