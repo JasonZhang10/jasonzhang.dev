@@ -17,25 +17,25 @@ const components = {
   ),
   table: ({ children }) => (
     <div className="overflow-x-auto my-6">
-      <table className="w-full border-collapse border border-gray-200 dark:border-gray-700">
+      <table className="w-full border-collapse border border-zinc-200 dark:border-zinc-700">
         {children}
       </table>
     </div>
   ),
   thead: ({ children }) => (
-    <thead className="bg-gray-50 dark:bg-gray-800">{children}</thead>
+    <thead className="bg-zinc-50 dark:bg-zinc-800">{children}</thead>
   ),
   tbody: ({ children }) => (
-    <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+    <tbody className="divide-y divide-zinc-200 dark:divide-zinc-700">
       {children}
     </tbody>
   ),
   tr: ({ children }) => (
-    <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">{children}</tr>
+    <tr className="hover:bg-zinc-50 dark:hover:bg-zinc-800/50">{children}</tr>
   ),
   th: ({ children, align }) => (
     <th
-      className={`px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100
+      className={`px-4 py-3 text-left text-sm font-semibold text-zinc-900 dark:text-zinc-100
         ${align === 'center' ? 'text-center' : ''}
         ${align === 'right' ? 'text-right' : ''}`}
     >
@@ -44,7 +44,7 @@ const components = {
   ),
   td: ({ children, align }) => (
     <td
-      className={`px-4 py-2 text-sm text-gray-700 dark:text-gray-300
+      className={`px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300
         ${align === 'center' ? 'text-center' : ''}
         ${align === 'right' ? 'text-right' : ''}`}
     >

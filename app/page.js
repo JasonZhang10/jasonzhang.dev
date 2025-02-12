@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect';
 export default function Home() {
   return (
     <div className="w-full h-full">
-      <div className="text-4xl mb-8">😊 Hello, World! 🌍</div>
+      <div className="text-4xl mb-8">Hello World! 🌏</div>
       <div className="flex flex-col gap-6 mb-8">
         <p>I&apos;m Jason Zhang - a Software Engineer in China.</p>
         <p>I work mostly with JS/TS technology.</p>

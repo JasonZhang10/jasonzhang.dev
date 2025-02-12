@@ -26,7 +26,7 @@ const HeaderMenu = ({ menu, className }) => {
           key={index}
           href={item.href}
           className={cn(
-            'rounded-xl hover:bg-gray-100 dark:hover:bg-opacity-10 sm:p-4 cursor-pointer',
+            'rounded-xl hover:bg-zinc-100 dark:hover:bg-opacity-10 sm:p-4 cursor-pointer',
             currentTab === index && 'text-amber-300'
           )}
           onClick={() => setCurrentTab(index)}
@@ -54,10 +54,9 @@ export default function Header() {
         onClick={() => setCurrentTab(-1)}
       >
         <Atom className="w-5 h-5" />
-        <div className="text-xl">Jason Zhang</div>
       </Link>
+      <HeaderMenu menu={menu} />
       <div className="flex items-center gap-4">
-        <HeaderMenu menu={menu} />
         <ThemeTrigger />
       </div>
     </header>

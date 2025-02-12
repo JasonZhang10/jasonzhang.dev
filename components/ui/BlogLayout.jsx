@@ -49,7 +49,7 @@ export function BlogLayout({
               {format(meta.date, 'yyyy/MM/dd')}
             </Paragraph>
           </time>
-          <div className="w-full mt-4 aspect-w-16 aspect-h-10 bg-gray-100 rounded-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
+          <div className="w-full mt-4 aspect-w-16 aspect-h-10 bg-zinc-100 rounded-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
             <Image
               src={meta.image}
               alt="thumbnail"

@@ -4,10 +4,16 @@ import React, { Suspense } from 'react';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import Loading from '@/components/basic/ContainerLoading';
+import { cn } from '@/lib/utils/tailwindMerge';
 
-const LayoutStructure = ({ children }) => {
+const LayoutStructure = ({ children, className }) => {
   return (
-    <div className="flex flex-col items-center w-full min-h-screen px-96 font-[family-name:var(--font-geist-sans)]">
+    <div
+      className={cn(
+        'flex flex-col items-center w-full max-w-[1080px] min-h-screen m-auto px-6',
+        className
+      )}
+    >
       <Header />
       <main className="w-full h-full flex flex-1 flex-col gap-8 items-center">
         <Suspense fallback={<Loading />}>{children}</Suspense>
