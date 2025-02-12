@@ -3,9 +3,15 @@
 import React from 'react';
 import { cn } from '@/lib/utils/tailwindMerge';
 import dynamic from 'next/dynamic';
-import { Atom } from 'lucide-react';
+import { Atom, NotebookText, FolderKanban, TreePalm } from 'lucide-react';
 import useHomeStore from '@/lib/store/HomeStore';
 import Link from 'next/link';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/Tooltip';
 
 const ThemeTrigger = dynamic(() => import('@/components/basic/ThemeTrigger'), {
   ssr: false,
@@ -17,22 +23,33 @@ const HeaderMenu = ({ menu, className }) => {
   return (
     <div
       className={cn(
-        'flex items-center text-base leading-5 gap-6 md:gap-3',
+        'flex items-center text-base leading-5 gap-4 py-2 rounded-xl',
         className
       )}
     >
       {menu.map((item, index) => (
-        <Link
-          key={index}
-          href={item.href}
-          className={cn(
-            'rounded-xl hover:bg-zinc-100 dark:hover:bg-opacity-10 sm:p-4 cursor-pointer',
-            currentTab === index && 'text-amber-300'
-          )}
-          onClick={() => setCurrentTab(index)}
-        >
-          {item.title.toUpperCase()}
-        </Link>
+        <TooltipProvider key={index}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href={item.href}
+                className={cn(
+                  'flex items-center rounded-xl hover:bg-zinc-100 dark:hover:bg-opacity-10 px-4 py-2 cursor-pointer',
+                  currentTab === index && 'text-amber-300'
+                )}
+                onClick={() => setCurrentTab(index)}
+              >
+                {item.icon}
+                <span className="ml-1 font-bold hidden md:block">
+                  {item.title}
+                </span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{item.tooltip}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       ))}
     </div>
   );
@@ -40,9 +57,14 @@ const HeaderMenu = ({ menu, className }) => {
 
 export default function Header() {
   const menu = [
-    { title: 'blog', href: '/blog' },
-    { title: 'project', href: '/project' },
-    { title: 'about', href: '/about' },
+    { title: 'BLOG', tooltip: '博客', href: '/blog', icon: <NotebookText /> },
+    {
+      title: 'PROJECT',
+      tooltip: '项目',
+      href: '/project',
+      icon: <FolderKanban />,
+    },
+    { title: 'ABOUT', tooltip: '关于', href: '/about', icon: <TreePalm /> },
   ];
   const { setCurrentTab } = useHomeStore((state) => state);
 
