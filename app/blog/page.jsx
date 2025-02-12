@@ -1,6 +1,6 @@
 import { Container } from '@/components/layout/Container/Container';
 import { Paragraph } from '@/components/ui/Paragraph';
-import { getAllBlogs } from '@/lib/utils/getAllBlogs';
+import { getAllBlogs } from '@/lib/utils/getBlog';
 import { Blogs } from '@/components/ui/Blogs';
 
 export default async function Blog() {

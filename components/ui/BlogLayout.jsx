@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Prose } from '@/components/ui/Prose';
 import { format } from 'date-fns';
@@ -28,8 +27,6 @@ export function BlogLayout({
   isRssFeed = false,
   previousPathname,
 }) {
-  let router = useRouter();
-
   return (
     <Container>
       <article>
@@ -43,7 +40,7 @@ export function BlogLayout({
             <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 d" />
           </Link>
 
-          <Heading className=" py-4">{meta.title}</Heading>
+          <Heading className="py-4 text-black">{meta.title}</Heading>
           <time
             dateTime={meta.date}
             className="flex items-center text-base text-zinc-400 "
@@ -62,7 +59,7 @@ export function BlogLayout({
             />
           </div>
         </header>
-        <Prose className="mt-8">{children}</Prose>
+        <Prose className="mt-8 text-black">{children}</Prose>
       </article>
     </Container>
   );
