@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils/tailwindMerge';
 import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
@@ -16,6 +18,15 @@ const THEME_TYPE = {
 
 export default function ThemeTrigger({ className }) {
   const { theme = 'light', setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true); // 标记客户端已加载
+  }, []);
+
+  if (!mounted) {
+    return null; // SSR 阶段返回空，避免 Hydration 错误
+  }
 
   return (
     <TooltipProvider>
