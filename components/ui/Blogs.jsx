@@ -58,22 +58,22 @@ export const Blogs = ({ blogs }) => {
                 src={blog.image}
                 alt="thumbnail"
                 height="200"
-                width="200"
+                width="300"
                 objectFit="cover"
                 className="rounded-md object-cover h-40 w-60"
               />
               <div className="flex flex-col col-span-3">
-                <Heading className="text-lg md:text-lg lg:text-lg text-black">
+                <Heading className="text-lg md:text-lg lg:text-lg text-black dark:text-white">
                   {blog.title}
                 </Heading>
-                <Paragraph className="text-sm md:text-sm lg:text-sm mt-2">
+                <Paragraph className="text-sm md:text-sm lg:text-sm mt-2 text-zinc-400 dark:text-zinc-200">
                   {blog.description}
                 </Paragraph>
                 <div className="flex space-x-2 flex-wrap mt-4">
                   {blog.tags?.map((tag, index) => (
                     <span
                       key={`tag-${blog.slug}-${index}`}
-                      className="text-xs px-1 py-0.5 text-secondary border border-neutral-200 bg-white rounded-md"
+                      className="text-xs px-1 py-0.5 text-secondary border border-zinc-400 dark:border-zinc-200 bg-transparent rounded-md text-zinc-400 dark:text-zinc-200"
                     >
                       {tag}
                     </span>
