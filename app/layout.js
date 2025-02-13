@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable}  scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="bg-amber-50 pl-[calc(100vw-100%)] text-black antialiased dark:bg-zinc-800 dark:text-white">
+      <body className="pl-[calc(100vw-100%)] text-black antialiased bg-[url('/grid-black.svg')] dark:bg-zinc-800 dark:bg-[url('/grid.svg')] bg-top bg-repeat dark:text-white">
         <ThemeProvider attribute="class">
           <LayoutStructure className="bg-white dark:bg-zinc-800 dark:border-x dark:border-x-zinc-100/20">
             {children}

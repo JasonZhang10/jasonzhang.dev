@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="w-full h-24 flex flex-col items-center justify-center gap-2">
       <div className="flex items-center justify-center gap-6">
         <a
-          className="text-sm text-black transition hover:text-zinc-600"
+          className="text-sm transition hover:text-zinc-600"
           target="_blank"
           rel="noopener noreferrer"
           href={siteMetaData.github}
@@ -20,7 +20,7 @@ export default function Footer() {
           href={`mailto:${siteMetaData.email}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-black transition hover:text-zinc-600"
+          className="text-sm transition hover:text-zinc-600"
         >
           <Mail />
         </a>

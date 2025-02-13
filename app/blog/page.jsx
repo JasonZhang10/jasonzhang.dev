@@ -1,5 +1,4 @@
 import { Container } from '@/components/layout/Container/Container';
-import { Paragraph } from '@/components/ui/Paragraph';
 import { getAllBlogs } from '@/lib/utils/getBlog';
 import { Blogs } from '@/components/ui/Blogs';
 
@@ -8,10 +7,8 @@ export default async function Blog() {
 
   return (
     <Container>
-      <span className="text-4xl">📝</span>
-      <Paragraph className="pb-10">
-        Ever since I was a kid, I&apos;ve been fascinated by technology.
-      </Paragraph>
+      <div className="text-4xl mb-8 font-smiley-sans">我的博客 📜</div>
+      <div className="flex flex-col gap-6 mb-8 text-zinc-400">你好</div>
       <Blogs blogs={blogs} />
     </Container>
   );

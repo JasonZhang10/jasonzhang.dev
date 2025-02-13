@@ -3,9 +3,10 @@
 import React from 'react';
 import { cn } from '@/lib/utils/tailwindMerge';
 import dynamic from 'next/dynamic';
-import { Atom, NotebookText, FolderKanban, TreePalm } from 'lucide-react';
+import { NotebookText, FolderKanban, TreePalm } from 'lucide-react';
 import useHomeStore from '@/lib/store/HomeStore';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Tooltip,
   TooltipContent,
@@ -23,7 +24,7 @@ const HeaderMenu = ({ menu, className }) => {
   return (
     <div
       className={cn(
-        'flex items-center text-base leading-5 gap-4 py-2 rounded-xl',
+        'flex items-center text-base leading-5 gap-0 md:gap-4 py-2 rounded-xl',
         className
       )}
     >
@@ -39,10 +40,8 @@ const HeaderMenu = ({ menu, className }) => {
                 )}
                 onClick={() => setCurrentTab(index)}
               >
-                {item.icon}
-                <span className="ml-1 font-bold hidden md:block">
-                  {item.title}
-                </span>
+                {/*{item.icon}*/}
+                <span className="ml-1 font-bold">{item.title}</span>
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -70,13 +69,15 @@ export default function Header() {
 
   return (
     <header className="w-full h-24 flex items-center justify-between mb-6">
-      <Link
-        href={'/'}
-        className="flex items-center gap-1"
-        onClick={() => setCurrentTab(-1)}
-      >
-        <Atom className="w-5 h-5" />
-      </Link>
+      <div className="w-8 h-8 relative">
+        <Link
+          href={'/'}
+          className="flex items-center gap-1"
+          onClick={() => setCurrentTab(-1)}
+        >
+          <Image src={'/icon.png'} alt={''} fill />
+        </Link>
+      </div>
       <HeaderMenu menu={menu} />
       <div className="flex items-center gap-4">
         <ThemeTrigger />

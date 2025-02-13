@@ -12,6 +12,9 @@ const config = {
   darkMode: 'selector',
   theme: {
     extend: {
+      fontFamily: {
+        'smiley-sans': ['smiley-sans', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
