@@ -52,10 +52,12 @@ pnpm dev
 ├── lib/                  # 项目通用，工具函数等
 └── public/               # 静态资源
 ```
-
-## 🚧 work in progress...
+## 🚧 TODO
 
 - 代码高亮
 - 项目页
 - 关于页
 - 移动端适配
+
+## Thanks
+本项目的灵感来自于 https://cali.so/ 和 https://sidefolio.vercel.app/blog ，感谢[CaliCastle](https://github.com/CaliCastle)和[Manu Arora](https://github.com/manuarora700)。
