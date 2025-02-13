@@ -72,7 +72,7 @@ export default function Header() {
       <div className="w-8 h-8 relative">
         <Link
           href={'/'}
-          className="flex items-center gap-1"
+          className="flex items-center gap-1 flex-shrink-0"
           onClick={() => setCurrentTab(-1)}
         >
           <Image src={'/icon.png'} alt={''} fill />
