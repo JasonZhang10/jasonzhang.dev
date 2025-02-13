@@ -2,6 +2,8 @@
 
 用于记录个人成长、思想感悟、技术积累的小站。
 
+![excemple.png](/public/basic/excemple.png)
+
 博客网址：https://jasonzhang-dev.vercel.app/ 欢迎来踩💓
 
 ## 💻 技术栈
