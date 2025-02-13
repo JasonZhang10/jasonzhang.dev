@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="pl-[calc(100vw-100%)] text-black antialiased bg-[url('/grid-black.svg')] dark:bg-zinc-800 dark:bg-[url('/grid.svg')] bg-top bg-repeat dark:text-white">
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" defaultTheme="system">
           <LayoutStructure className="bg-white dark:bg-zinc-800 dark:border-x dark:border-x-zinc-100/20">
             {children}
           </LayoutStructure>

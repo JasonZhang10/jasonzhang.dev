@@ -12,11 +12,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/Tooltip';
-// import ThemeTrigger from '@/components/basic/ThemeTrigger';
+import ThemeTrigger from '@/components/basic/ThemeTrigger';
 
-const ThemeTrigger = dynamic(() => import('@/components/basic/ThemeTrigger'), {
-  ssr: false,
-});
+// const ThemeTrigger = dynamic(() => import('@/components/basic/ThemeTrigger'), {
+//   ssr: false,
+// });
 
 const HeaderMenu = ({ menu, className }) => {
   const { currentTab, setCurrentTab } = useHomeStore((state) => state);

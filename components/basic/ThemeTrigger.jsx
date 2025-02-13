@@ -14,6 +14,7 @@ import {
 const THEME_TYPE = {
   DARK: 'dark',
   LIGHT: 'light',
+  SYSTEM: 'system',
 };
 
 export default function ThemeTrigger({ className }) {
@@ -36,7 +37,7 @@ export default function ThemeTrigger({ className }) {
             {theme === THEME_TYPE.DARK && (
               <Sun onClick={() => setTheme(THEME_TYPE.LIGHT)} />
             )}
-            {theme === THEME_TYPE.LIGHT && (
+            {(theme === THEME_TYPE.LIGHT || theme === THEME_TYPE.SYSTEM) && (
               <Moon onClick={() => setTheme(THEME_TYPE.DARK)} />
             )}
           </div>
