@@ -3,7 +3,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils/tailwindMerge';
 import dynamic from 'next/dynamic';
-import { NotebookText, FolderKanban, TreePalm } from 'lucide-react';
 import useHomeStore from '@/lib/store/HomeStore';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,10 +12,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/Tooltip';
+import ThemeTrigger from '@/components/basic/ThemeTrigger';
 
-const ThemeTrigger = dynamic(() => import('@/components/basic/ThemeTrigger'), {
-  ssr: false,
-});
+// const ThemeTrigger = dynamic(() => import('@/components/basic/ThemeTrigger'), {
+//   ssr: false,
+// });
 
 const HeaderMenu = ({ menu, className }) => {
   const { currentTab, setCurrentTab } = useHomeStore((state) => state);
