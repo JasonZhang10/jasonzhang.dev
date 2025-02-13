@@ -35,12 +35,11 @@ const HeaderMenu = ({ menu, className }) => {
               <Link
                 href={item.href}
                 className={cn(
-                  'flex items-center rounded-xl hover:bg-zinc-100 dark:hover:bg-opacity-10 px-4 py-2 cursor-pointer',
+                  'flex items-center rounded-xl hover:bg-zinc-100 dark:hover:bg-opacity-10 px-2 md:px-4 py-2 cursor-pointer',
                   currentTab === index && 'text-amber-300'
                 )}
                 onClick={() => setCurrentTab(index)}
               >
-                {/*{item.icon}*/}
                 <span className="ml-1 font-bold">{item.title}</span>
               </Link>
             </TooltipTrigger>
@@ -56,14 +55,13 @@ const HeaderMenu = ({ menu, className }) => {
 
 export default function Header() {
   const menu = [
-    { title: 'BLOG', tooltip: '博客', href: '/blog', icon: <NotebookText /> },
+    { title: 'BLOG', tooltip: '博客', href: '/blog' },
     {
       title: 'PROJECT',
       tooltip: '项目',
       href: '/project',
-      icon: <FolderKanban />,
     },
-    { title: 'ABOUT', tooltip: '关于', href: '/about', icon: <TreePalm /> },
+    { title: 'ABOUT', tooltip: '关于', href: '/about' },
   ];
   const { setCurrentTab } = useHomeStore((state) => state);
 
@@ -73,15 +71,13 @@ export default function Header() {
         <Link
           href={'/'}
           className="flex items-center gap-1 flex-shrink-0"
-          onClick={() => setCurrentTab(-1)}
+          onClick={() => setCurrentTab(0)}
         >
           <Image src={'/icon.png'} alt={''} fill />
         </Link>
       </div>
       <HeaderMenu menu={menu} />
-      <div className="flex items-center gap-4">
-        <ThemeTrigger />
-      </div>
+      <ThemeTrigger />
     </header>
   );
 }
